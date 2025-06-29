@@ -24,7 +24,7 @@ https://github.com/jonsag/arduTester
 
 ## 🔌 Devre Şeması / Circuit Diagram
 
-![Devre Şeması](devre%20%C5%9Femasi.png)
+![Devre Şeması](devre şeması.png)
 
 ---
 
