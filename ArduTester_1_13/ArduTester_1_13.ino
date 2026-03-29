@@ -17,7 +17,6 @@
   // core
   #include "core/autoconf.h"
   #include "core/config.h"
-  #include "core/io.h"
   #include "core/part_defs.h"
   #include "core/sleep.h"
   #include "core/Transistortester.h"
@@ -35,10 +34,6 @@
  
   // menu
   #include "menu/tt_function.h"
-
-#ifdef MAIN_C
-   volatile io_sim_t io;
-#endif
 
 /* defines global variables in RAM and EEprom from file tt_globals.h */
 /* removed ifdef MAIN_C because always defined */
@@ -2442,3 +2437,55 @@ void GetIr(uint8_t hipin, uint8_t lopin) {
 void loop() {
     
 }
+
+  // dsiplay
+  #include "display/DisplayValue.cpp"
+  #include "display/i2lcd.cpp"
+  #include "display/lcd_draw.cpp"
+  #include "display/lcd_hw_4_bit.cpp"
+  #include "display/lcd_routines_serial.cpp"
+  #include "display/lcd_routines.cpp"
+  #include "display/show_Resis_Cap.cpp"
+  #include "display/ShowData.cpp"
+
+  // input
+  #include "input/CheckRotaryEncoder.cpp"
+  #include "input/message_key_released.cpp"
+  #include "input/wait_for_key_ms.cpp"
+
+  // math
+  #include "math/GetRLmultip.cpp"
+  #include "math/GetVloss.cpp"
+
+  // measurement
+  #include "measurement/GetESR.cpp"
+  #include "measurement/GetFrequency.cpp"
+  #include "measurement/GetResistance.cpp"
+  #include "measurement/ReadADC.cpp"
+  #include "measurement/ReadBigCap.cpp"
+  #include "measurement/ReadCapacity.cpp"
+  #include "measurement/ReadInductance.cpp"
+  #include "measurement/Sampling_cap.cpp"
+  #include "measurement/sampling_lc.cpp"
+  #include "measurement/sampling_xtal.cpp"
+  #include "measurement/samplingADC.cpp"
+
+  // menu
+  #include "menu/function_menu.cpp"
+
+  // system
+  #include "system/Battery_check.cpp"
+  #include "system/Calibrate_UR.cpp"
+  #include "system/CalibrationCap.cpp"
+  #include "system/ChargePin10ms.cpp"
+  #include "system/CheckPins.cpp"
+  #include "system/CheckUJT.cpp"
+  #include "system/EE_check_init.cpp"
+  #include "system/EntladePins.cpp"
+  #include "system/get_log.cpp"
+  #include "system/PinLayout.cpp"
+  #include "system/RefVoltage.cpp"
+  #include "system/RvalOut.cpp"
+  #include "system/sleep_5ms.cpp"
+  #include "system/UfAusgabe.cpp"
+  #include "system/wait1000ms.cpp"
